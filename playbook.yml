@@ -1,0 +1,45 @@
+---
+- hosts: servidores
+  become: yes
+  tasks:
+    - name: Actualizar cache de software de apt
+      apt:
+        update_cache: yes
+
+    - name: Instalar Apache
+      apt:
+        name: apache2
+        state: present
+
+    - name: Instalar Cowsay
+      apt:
+        name: cowsay
+        state: present
+
+    - name: Crear archivo
+      file:
+        path: /home/vagrant/archivo.txt
+        state: touch
+
+    - name: Copiar archivos
+      copy:
+        src: /ruta/local/del/archivo
+        dest: /home/vagrant/
+
+    - name: Crear carpetas
+      file:
+        path: /home/vagrant/carpeta
+        state: directory
+
+    - name: Iniciar Apache
+      service:
+        name: apache2
+        state: started
+
+    - name: Agregar un usuario
+      user:
+        name: nuevo_usuario
+        state: present
+
+    - name: Ejecutar un script en el servidor
+      shell: /home/vagrant/script.sh

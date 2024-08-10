@@ -1,0 +1,31 @@
+# Ignorar archivos de claves privadas
+.vagrant/machines/server1/virtualbox/private_key
+.vagrant/machines/server2/virtualbox/private_key
+.vagrant/machines/server3/virtualbox/private_key
+
+# Ignorar la carpeta .vagrant completa
+.vagrant/
+
+# Ignorar archivos de configuración específicos de IDE
+.vscode/
+.idea/
+
+# Ignorar archivos de Python compilados
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar archivos de logs
+*.log
+
+# Ignorar archivos de entorno virtual de Python
+venv/
+.env/
+
+# Ignorar archivos de configuración de Ansible
+*.retry
+
+# Ignorar archivos temporales del sistema operativo
+.DS_Store
+Thumbs.db
